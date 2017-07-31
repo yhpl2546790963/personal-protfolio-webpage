@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>personal web</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            color:#fff;
+            background-color: #888;
+            font-family:"Helvetica Neue",Helvetica,Arial,sans-serif,"microsoft yahei";
+            font-size:25px;
+            overflow-x: hidden;
+        }
+        #top-nav{
+            height:70px;
+            background-color: #722872;
+            margin-bottom:0;
+            border-bottom:0;
+        }
+        #top-nav .container{
+            height: 100%;
+            padding: 0;
+        }
+        #top-nav .container img{
+            height:60px;
+            width:60px;
+            margin-top: 5px;
+            border-radius: 50%;
+        }
+        #top-nav .container button{
+            margin:18px 0 18px 0;
+        }
+        #top-nav #navbar-item0{
+            border-top:0;
+        }
+        #top-nav #navbar-item0 ul{
+            margin-top: 0;
+        }
+        #top-nav #navbar-item0 ul li{
+            background-color: #722872;
+        }
+        @media screen and ( max-width:768px){
+            #navbar-item0{
+                position: absolute;
+                left: 5%;
+                margin:0 auto;
+                width: 90%;
+                z-index:-1;
+            }
+            #top-nav #navbar-item0 ul{
+                padding-top:70px;
+                display:flex;
+                background-color: transparent;
+            }
+            #top-nav #navbar-item0 ul li{
+                flex: 1;
+                justify-content: space-between;
+                text-align: center;
+            }
+            #top-nav .container{
+                padding: 0 20px;
+            }
+            div.scroll-top{
+                display: block;
+            }
+        }
+        #top-nav #navbar-item0 ul li a{
+            height: 70px;
+            padding-top:0;
+            font-size:25px;
+            line-height:70px;
+        }
+
+        
+        #main-wrap{
+            padding: 0;
+            background-color: #aaa;
+        }
+
+        #main-content {
+            padding-top: 140px;
+        }
+        #main-content header{
+            padding:0 20px 30px 20px;
+        }
+        #main-content header .introduce {
+            padding: 30px 0;
+        }
+        #main-content header .star-bright{
+            height: 0;
+            border-top: 4px solid #fff;
+            width: 80%;
+        }
+        #main-content header .introduce-img {
+            padding-top: 10px;
+        }
+
+        #main-content #interest,#Contact{
+            padding: 20px 0;
+            background-color: #eee;
+            color: #888;
+            border-bottom: 2px solid #ccc;
+        }
+        #main-content #interest h2,#Contact h2{
+            padding: 20px 0;
+        }
+        #main-content #interest .star-dark,#Contact .star-dark{
+            margin: 0 auto;
+            width: 60%;
+            border-top: 4px solid #888;
+            padding-bottom: 15px;
+        }
+        #main-content #interest ul{
+            list-style: none;
+            margin:0 auto;
+            padding: 0 20px;
+        }
+        #main-content #interest ul li{
+            padding-top: 40px;
+        }
+        #main-content #interest ul li img{
+            width: 100%;
+            height:auto;
+            display: block;
+
+        }
+        @media screen and ( min-width: 992px){
+            #main-content #interest ul{
+                padding: 0 40px;
+            }
+            #main-content #interest ul li{
+                width: 50%;
+                float: left;
+                padding: 20px 10px;
+            }
+            #main-content #interest ul li img{
+                width: 100%;
+                height: 300px;
+            }
+        }
+        @media screen and ( max-width: 992px){
+            #main-wrap{
+                width: 100%;
+            }
+        }
+
+
+        #Contact{
+            border-bottom:0;
+        }
+        #Contact .contact-form{
+            padding: 0 30px 0 60px;
+        }
+        #Contact .form-item{
+            overflow: hidden;
+        }
+        #Contact input,#Contact textarea{
+            font-size: 35px;
+            line-height: 50px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            padding: 20px 20px 15px 0;
+            box-sizing: content-box;
+            outline: none;
+            box-shadow: none;
+            background-color: #eee;
+        }
+        #Contact textarea{
+            padding-right:0;
+        }
+        #Contact .contact-detail{
+            padding: 50px 80px 0 60px;
+            height: 666px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size:22px;
+        }
+
+
+        footer #footer-above{
+            background-color: #aaa;
+            margin: 0;
+            padding: 40px;
+        }
+        footer #footer-above h3{
+            padding: 10px 0;
+            font-size: 30px;
+        }
+        footer #footer-above p{
+            font-size: 20px;
+        }
+        footer #footer-above p a{
+            color: #722872;
+        }
+        footer #footer-above ul li{
+            display: inline-block;
+        }
+        footer #footer-above ul li a{
+            display: block;
+            width: 50px;
+            line-height: 46px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            margin: 0 1px;
+            transition: all 1s linear;
+        }
+        footer #footer-above ul li a i{
+            color: #fff;
+        }
+        footer #footer-above ul li a:hover{
+            background-color: #fff;
+        }
+        footer #footer-above ul li a:hover i{
+            color: #722872;
+        }
+        footer #footer-below{
+            line-height: 70px;
+            background-color: #722872;
+        }
+
+        .scroll-top{
+            width: 50px;
+            line-height:46px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            background-color: #722872;
+            transition: all 1s;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+        }
+        .scroll-top i{
+            color: #fff;
+        }
+        .scroll-top:hover{
+            background-color: #aaa;
+            border-color: #722872;
+        }
+        .scroll-top:hover i{
+            color: #722872;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top" id="top-nav">
+        <div class="container">
+            <a class="pull-left" href="#"><img src="http://bpic.588ku.com/element_origin_min_pic/16/11/03/0413ba4f6ac1c5a19f03864c9695bba3.jpg" alt="清华大学"></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-item0" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-right collapse navbar-collapse" id="navbar-item0">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#top">About </a></li>
+                    <li><a href="#interest">Interest</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header><a id="top" name="home"></a>
+
+    <div class="container" id="main-wrap">
+        <main id="main-content">
+                <header>
+                        <div class="row">
+                            <div class="introduce col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-1  ">
+                                <p class="text-center">前端小白，目前自学中，求高人指点，希望能尽快入门，这是一个很有意思的事情，所见即所得，愿你我共同成长!!!</p>
+                                <hr class="star-bright"/><p class="skills text-center">A student from SCUT, loving life ,enjoying life ,and devoting to it,join in me ,<em>come on</em>&nbsp;&nbsp;!!!</p>
+                            </div>
+                            <div class=" introduce-img col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+                                <img class=" img-circle img-responsive" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1500006970148&di=e42dc3fc643371b4e00533221191d5d0&imgtype=0&src=http%3A%2F%2Fpic2.cxtuku.com%2F00%2F08%2F61%2Fb813b7862b67.jpg" alt="小清新">
+                            </div>
+                        </div>
+                </header>
+
+                <section id="interest" class="text-center">
+                    <h2>Interest</h2>
+                    <hr class="star-dark "/>
+                    <ul class="row">
+                        <li><img src="http://static.cfanz.cn/uploads/png/2015/05/02/10/11cc4793Df.png" alt="code"></li>
+                        <li><img src="http://imgsrc.baidu.com/image/c0%3Dshijue%2C0%2C0%2C245%2C40/sign=8291976c08087bf469e15faa9aba3d59/0b46f21fbe096b636920f67706338744ebf8acd8.jpg" alt="book"></li>
+                        <li><img src="http://img.redocn.com/sheying/20160429/qipanshangdezhongguoxiangqi_6247421.jpg" alt="Chinachess"></li>
+                        <li><img src="http://img.znds.com/uploads/new/150506/9-15050616024T28.jpg" alt="music"></li>
+                        <li><img src="http://img.zcool.cn/community/01afa755c712356ac7255808fffc24.jpg@900w_1l_2o_100sh.jpg" alt="yumaoqiu"></li>
+                        <li><img src="http://3g.en8848.com.cn/d/file/201503/60a3778cfaa34b89c6045c41d380c0df.jpg" alt="travel"></li>
+                    </ul>
+                </section>
+
+                <section id="Contact" class="text-center">
+                    <h2>Contact Me</h2>
+                    <hr class="star-dark "/>
+                    <div class="row">
+                        <form action="javascript: void(0)" class="contact-form text-left col-md-6 ">
+                            <div class="form-item">
+                                <label for="Yourname"></label>
+                                <input type="text" class="form-control" id="YourName" placeholder="Name">
+                            </div>
+                            <div class="form-item">
+                                <label for="YourNumber"></label>
+                                <input type="tel" class="form-control" id="YourNumber" placeholder="Phone Number">
+                            </div>
+                            <div class="form-item">
+                                <label for="YourEmail"></label>
+                                <input type="email" class="form-control" id="YourEmail" placeholder="Email">
+                            </div>
+
+                            <label for="YourMessage"></label>
+                            <textarea rows="4" style="resize:none" class="form-control" id="YourMessage" placeholder="Message"></textarea>
+
+                            <br>
+                            <button type="submit" class="">Send</button>
+                        </form>
+                        <div class="col-md-6 text-left contact-detail">
+                            <p>An idea can still change the world.I have witnessed firsthand
+                                the power of ideas.I've seen people kill in the name of them and die defending them.But you cannot kiss an idea,cannot touch it or hold it.Ideas do not bleed.They do not feel pain.They do not love.</p>
+                            <p>My favourite movie<cite> V for Vendetta</cite></p>
+                            <p>Note: A rebellion below the waist)</p>
+                        </div>
+                    </div>
+                </section>
+        </main>
+    </div>
+
+    <footer>
+        <div id="footer-above" class="row">
+            <div class="col-md-6 text-center">
+                <h3>About this page</h3>
+                <p>Made with <i class="fa fa-fw fa-coffee"></i> and <i class="fa fa-fw fa-music"></i><br/>by <a href="https://codepen.io/yhpl2546790963/full/VWgbdz/">Xiaoyu Wu</a></p>
+            </div>
+            <div class="col-md-5 text-center" >
+                <h3>Around the Web</h3>
+                <ul class="list-unstyled text-center">
+                    <li><a class="button social" href="https://www.linkedin.com/in/hallaathrad"><i class="fa fa-fw fa-linkedin"></i></a></li>
+                    <li><a class="button social" href="https://github.com/hallaathrad"><i class="fa fa-fw fa-github"></i></a></li>
+                    <li><a class="button social" href="https://twitter.com/hallaathrad"><i class="fa fa-fw fa-twitter"></i></a></li>
+                    <li><a class="button social" href="https://www.flickr.com/photos/hallaathrad/" title="My Flickr"><i class="fa fa-fw fa-flickr"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer-below" class="text-center">artist ©
+            <script>document.write(new Date().getFullYear())</script>. All Rights Reversed
+        </div>
+    </footer>
+    <div class="scroll-top text-center"><a class="button" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+</body>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("#top-nav ul li").on("click",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $(window).on("scroll",function(){
+            console.log($(document).scrollTop());
+            if($(document).scrollTop()>=0&&$(document).scrollTop()<445){
+                $("#top-nav ul li").eq(0).addClass("active").siblings().removeClass("active")
+            }
+            else if($(document).scrollTop()>=445&&$(document).scrollTop()<1629){
+                $("#top-nav ul li").eq(1).addClass("active").siblings().removeClass("active")
+            }else{
+                $("#top-nav ul li").eq(2).addClass("active").siblings().removeClass("active")
+            }
+        });
+
+    </script>
+</html>
